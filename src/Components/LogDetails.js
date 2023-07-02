@@ -30,12 +30,12 @@ function LogDetails() {
 
     return (
       <article>
-      <h3>
-        {logs.mistakesWereMadeToday ? <span>😔</span> : null} {logs.captainName}
+      <h3> Captain Name: {logs.captainName}
       </h3>
-      <h6>{logs.title}</h6>
-      <p>{logs.post}</p>
-      <p>{logs.daysSinceLastCrisis}</p>
+      <h6>Title: {logs.title}</h6>
+      <p>Post: {logs.post}</p>
+      <p>Days Since Last Crisis:{logs.daysSinceLastCrisis}</p>
+      <p>Were Mistakes Made Today: {logs.mistakesWereMadeToday ? <span>😔</span> : null}</p>
       <div className="showNavigation">
         <div>
           {" "}

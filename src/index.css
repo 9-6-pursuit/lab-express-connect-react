@@ -1,5 +1,26 @@
-body {
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+a {
+  text-decoration: none;
+  color: lightgray;
+}
+
+button {
+  background: #031639;
+  border-color: lightgrey;
+  color: #d3d3d3;
+  font-style: lightgray;
+}
+main {
+  width: 90%;
+  margin: auto;
+}
+
+.navbar {
+  align-items: center;
+  background: #031639;
+  box-shadow: 2px 2px 4px grey;
+  color: lightgray;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1em;
+  padding: 1em;
 }

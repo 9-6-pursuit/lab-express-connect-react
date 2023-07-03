@@ -32,9 +32,6 @@ function LogEditForm() {
   }, [index]);
 
   const updateLog = () => {
-    console.log(log)
-    console.log(`${API}/logs/${index}`)
-
     axios
       .put(`${API}/logs/${index}`, log)
       .then((response) => {
@@ -50,8 +47,9 @@ function LogEditForm() {
   };
     return (
       <div className="Edit">
+        <h1>Captain's Log</h1>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="captainName">Captain Name:</label>
+        <label htmlFor="captainName">Captain's Name:</label>
         <input
           id="captainName"
           value={log.captainName}
@@ -70,7 +68,7 @@ function LogEditForm() {
           onChange={handleTextChange}
         />
         <label htmlFor="post">Post:</label>
-        <input
+        <textarea
           id="post"
           type="text"
           name="post"
@@ -78,7 +76,7 @@ function LogEditForm() {
           placeholder="Post"
           onChange={handleTextChange}
         />
-        <label htmlFor="mistakesWereMadeToday">How Many Mistakes Were Made Today:</label>
+        <label htmlFor="mistakesWereMadeToday">Mistakes were made todayy:</label>
         <input
           id="mistakesWereMadeToday"
           type="checkbox"
@@ -88,18 +86,17 @@ function LogEditForm() {
         <label htmlFor="daysSinceLastCrisis">Days Since Last Crisis:</label>
         <input
           id="daysSinceLastCrisis"
-          type="text"
+          type="number"
           name="daysSinceLastCrisis"
           value={log.daysSinceLastCrisis}
           placeholder="Days Since Last Crisis"
           onChange={handleTextChange}
         />
         <br />
-
-        <input type="submit" />
+        <button type="submit">Edit</button>
       </form>
       <Link to={`/logs/${index}`}>
-        <button>Nevermind!</button>
+        <button>Back</button>
       </Link>
     </div>
     )

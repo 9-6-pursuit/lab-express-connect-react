@@ -1,6 +1,6 @@
 a {
   text-decoration: none;
-  color: lightgray;
+  color: black
 }
 
 button {
@@ -23,4 +23,9 @@ main {
   justify-content: space-between;
   margin-bottom: 1em;
   padding: 1em;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: lightgray;
 }

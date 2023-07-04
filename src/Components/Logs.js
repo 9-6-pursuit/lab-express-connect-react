@@ -23,8 +23,8 @@ function Logs() {
         <table>
           <thead>
             <tr>
-              <th></th>
-              <th>Take me there</th>
+              <th>Mistakes</th>
+              <th>Captain Name</th>
               <th>See this log</th>
             </tr>
           </thead>

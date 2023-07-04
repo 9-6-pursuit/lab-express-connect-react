@@ -14,7 +14,7 @@ function Log({ log, index }) {
         <td>{log.captainName}</td>
       </td>
       <td>
-        <Link to={`/logs/${index}`}>✏️</Link>
+        <Link to={`/logs/${index}`}>{log.title}</Link>
       </td>
     </tr>
   );

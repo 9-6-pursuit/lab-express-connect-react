@@ -9,10 +9,10 @@ function LogNewForm() {
   const navigate = useNavigate();
   const [log, setLog] = useState({
     name: "",
-    url: "",
-    category: "",
-    isFavorite: false,
+    title: "",
+    post: "",
     description: "",
+    mistakesWereMadeToday: false,
   });
 
   const addLog = (newLog) => {
@@ -29,7 +29,7 @@ function LogNewForm() {
   };
 
   const handleCheckboxChange = () => {
-    setLog({ ...log, isFavorite: !log.isFavorite });
+    setLog({ ...log, mistakesWereMadeToday: !log.mistakesWereMadeToday });
   };
 
   const handleSubmit = (event) => {

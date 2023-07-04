@@ -12,10 +12,10 @@ function LogEditForm() {
 
   const [log, setLog] = useState({
     name: "",
-    url: "",
-    category: "",
+    title: "",
+    post: "",
     description: "",
-    isFavorite: false,
+    mistakesWereMadeToday: false,
   });
 
   const handleTextChange = (event) => {
@@ -23,7 +23,7 @@ function LogEditForm() {
   };
 
   const handleCheckboxChange = () => {
-    setLog({ ...log, isFavorite: !log.isFavorite });
+    setLog({ ...log, mistakesWereMadeToday: !log.mistakesWereMadeToday });
   };
 
   useEffect(() => {
@@ -48,7 +48,7 @@ function LogEditForm() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    updateLog();
+    updateLog(log);
   };
   return (
     <div className="Edit">

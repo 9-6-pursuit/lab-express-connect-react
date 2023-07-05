@@ -54,7 +54,7 @@ function LogEditForm() {
         <label htmlFor="name">Captain's Name:</label>
         <input
           id="name"
-          value={log.name}
+          value={log.captainName}
           type="text"
           onChange={handleTextChange}
           placeholder="Name of Captain"

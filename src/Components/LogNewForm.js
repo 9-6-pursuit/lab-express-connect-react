@@ -8,10 +8,10 @@ function LogNewForm() {
 
   const navigate = useNavigate();
   const [log, setLog] = useState({
-    name: "",
+    captainName: "",
     title: "",
     post: "",
-    description: "",
+    daysSinceLastCrisis: "",
     mistakesWereMadeToday: false,
   });
 
@@ -41,9 +41,9 @@ function LogNewForm() {
   return (
     <div className="new">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Captain's Name:</label>
+        <label htmlFor="captainName">Captain's Name:</label>
         <input
-          id="name"
+          id="captainName"
           type="text"
           onChange={handleTextChange}
           placeholder=""
@@ -60,24 +60,24 @@ function LogNewForm() {
           value={log.title}
         />
         <label htmlFor="post">Post:</label>
-        <input
+        <textarea
           id="post"
           type="text"
           placeholder=""
           onChange={handleTextChange}
           value={log.post}
         />
-        <label htmlFor="description">Day Since Last Crisis</label>
-        <textarea
-          id="crisis"
+        <label htmlFor="daysSinceLastCrisis">Day Since Last Crisis</label>
+        <input
+          id="daysSinceLastCrisis"
           type="number"
           value={log.daysSinceLastCrisis}
           onChange={handleTextChange}
           placeholder=""
         />
-        <label htmlFor="mistakes">Mistakes were made today :</label>
+        <label htmlFor="mistakesWereMadeToday">Mistakes were made today :</label>
         <input
-          id="isFavorite"
+          id="mistakesWereMadeToday"
           type="checkbox"
           onChange={handleCheckboxChange}
           checked={log.mistakesWereMadeToday}

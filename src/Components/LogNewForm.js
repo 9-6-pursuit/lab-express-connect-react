@@ -62,6 +62,7 @@ function LogNewForm() {
           id="post"
           type="text"
           name="post"
+          required
           value={log.post}
           placeholder="Quote"
           onChange={handleTextChange}

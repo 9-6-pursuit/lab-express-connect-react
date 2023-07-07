@@ -31,7 +31,7 @@ function LogEditForm() {
   };
 
   const handleCheckboxChange = () => {
-    setlog({ ...log, isFavorite: !log.isFavorite });
+    setlog({ ...log, mistakesWereMadeToday: !log.mistakesWereMadeToday });
   };
 
   useEffect(() => {
@@ -51,7 +51,7 @@ function LogEditForm() {
   return (
     <div className="Edit">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Captain's Name:</label>
+        <label htmlFor="captainName">Captain's Name:</label>
         <input
           id="captainName"
           value={log.captainName}
@@ -74,6 +74,7 @@ function LogEditForm() {
           id="post"
           type="text"
           name="post"
+          required
           value={log.post}
           placeholder="Quote"
           onChange={handleTextChange}

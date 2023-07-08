@@ -15,53 +15,58 @@ function LogDetails() {
       .get(`${API}/logs/${index}`)
       .then((response) => {
         // console.log(response)
-          setLogs(response.data);
+        setLogs(response.data);
       })
       .catch(() => {
         navigate("/not-found");
       });
-  });
+  }, [index, navigate]);
 
   const handleDelete = () => {
-    axios
-      .delete(`${API}/logs/${index}`)
-      .then(() => {
-        navigate(`/logs`);
-      })
-      .catch((e) => console.error(e));
+    const confirmed = window.confirm(
+      "Are you sure you want to delete this log?"
+    );
+    if (confirmed) {
+      axios
+        .delete(`${API}/logs/${index}`)
+        .then(() => {
+          navigate(`/logs`);
+        })
+        .catch((e) => console.error(e));
+    }
   };
 
   return (
     <article>
-      <h3>Captain's Log</h3>
-      <p>
-        {logs.title} - By {logs.captainName}
-      </p>
-      <p>Post: {logs.post}</p>
-      <p>
-        {logs.mistakesWereMadeToday ? (
-          <span>🚧🚧🚧 Mistakes were made today 🚧🚧🚧</span>
-        ) : (
-          <span>⭐⭐⭐ No mistakes today ⭐⭐⭐</span>
-        )}
-      </p>
-      <p>Days since last crisis: {logs.daysSinceLastCrisis}</p>
-      <div className="showNavigation">
+      <div className="card-container">
+        <div className="card showCard">
+          <h2 className="title">
+            {logs.title} - By {logs.captainName}
+          </h2>
+          <p>{logs.post}</p>
+          <p>
+            <strong>Days since last crisis:</strong> {logs.daysSinceLastCrisis}
+          </p>
+        </div>
+      </div>
+      <div className="buttons">
         <div>
           {" "}
           <Link to={`/logs`}>
-            <button>Back</button>
+            <button className="button">Back</button>
           </Link>
         </div>
         <div>
           {" "}
           <Link to={`/logs/${index}/edit`}>
-            <button>Edit</button>
+            <button className="button">Edit</button>
           </Link>
         </div>
         <div>
           {" "}
-          <button onClick={handleDelete}>Delete</button>
+          <button className="button" onClick={handleDelete}>
+            Delete
+          </button>
         </div>
       </div>
     </article>

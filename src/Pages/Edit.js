@@ -4,7 +4,7 @@ import LogEditForm from "../Components/LogEditForm";
 function Edit() {
   return (
     <div className="New Edit">
-      <h2>Edit</h2>
+      <h1 className="index">Edit</h1>
       <LogEditForm />
     </div>
   );

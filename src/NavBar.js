@@ -18,7 +18,7 @@ class NavBar extends React.Component {
         <div className="collapse navbar-collapse d-flex justify-content-end">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
-              <Link className="nav-link" to="/logs/new">
+              <a href="/logs/new" className="nav-link">
                 <button
                   className="btn btn-primary btn-long"
                   style={{
@@ -29,7 +29,7 @@ class NavBar extends React.Component {
                 >
                   New Log
                 </button>
-              </Link>
+              </a>
             </li>
           </ul>
         </div>

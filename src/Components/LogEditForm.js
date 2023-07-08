@@ -1,6 +1,8 @@
 import axios from "axios";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+
+import "../logs.css";
 
 const API = process.env.REACT_APP_API_URL;
 
@@ -46,57 +48,77 @@ function LogEditForm() {
         setLog(response.data);
       })
       .catch((e) => console.error(e));
-  }, [index]);
+  }, [index, navigate]);
 
   return (
     <div className="Edit">
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Captain's Name:</label>
-        <input
-          id="name"
-          value={log.captainName}
-          type="text"
-          onChange={handleTextChange}
-          placeholder="Name of Captain"
-          required
-        />
-        <label htmlFor="title">Title:</label>
-        <input
-          id="title"
-          value={log.title}
-          type="text"
-          onChange={handleTextChange}
-        />
-        <label htmlFor="post">Post:</label>
-        <textarea
-          id="post"
-          type="text"
-          name="post"
-          value={log.post}
-          onChange={handleTextChange}
-          placeholder="What happened today?"
-        />
-        <label htmlFor="lastCrisis">Days Since Last Crisis:</label>
-        <input
-          id="lastCrisis"
-          name="lastCrisis"
-          value={log.daysSinceLastCrisis}
-          onChange={handleTextChange}
-          placeholder="0"
-        />
-        <label htmlFor="mistakesToday">Mistakes were made today:</label>
-        <input
-          id="mistakesToday"
-          type="checkbox"
-          onChange={handleCheckboxChange}
-          checked={log.mistakesWereMadeToday}
-        />
+      <form onSubmit={handleSubmit} className="edit-form">
+        <div className="mb-2">
+          <label htmlFor="captainName">Captain's Name:</label>
+          <input
+            className="form-control"
+            id="captainName"
+            value={log.captainName}
+            type="text"
+            onChange={handleTextChange}
+            placeholder="Captain's Name"
+            required
+          />
+        </div>
+        <div className="mb-2">
+          <label htmlFor="title">Title:</label>
+          <input
+            className="form-control"
+            id="title"
+            value={log.title}
+            type="text"
+            placeholder="title"
+            onChange={handleTextChange}
+          />
+        </div>
+        <div className="mb-2">
+          <label htmlFor="post">Post:</label>
+          <textarea
+            id="post"
+            className="form-control"
+            type="text"
+            name="post"
+            value={log.post}
+            onChange={handleTextChange}
+            placeholder="What happened today?"
+          ></textarea>
+        </div>
+        <div className="mb-2">
+          <label htmlFor="daysSinceLastCrisis">Days Since Last Crisis:</label>
+          <input
+            className="form-control"
+            id="daysSinceLastCrisis"
+            name="daysSinceLastCrisis"
+            value={log.daysSinceLastCrisis}
+            type="number"
+            onChange={handleTextChange}
+            placeholder="0"
+          />
+        </div>
+        <div>
+          <label htmlFor="mistakesWereMadeToday">
+            Mistakes were made today:
+          </label>
+          <br />
+          <input
+            id="mistakesWereMadeToday"
+            type="checkbox"
+            onChange={handleCheckboxChange}
+            checked={log.mistakesWereMadeToday}
+            style={{ marginLeft: "30px" }}
+          />
+        </div>
         <br />
-        <input type="submit" />
+        <input className="submit" type="submit" />
       </form>
-      <Link to={`/logs/${index}`}>
-        <button>Nevermind!</button>
-      </Link>
+      <a href="/logs">
+        <button className="backButton">Back</button>
+      </a>
     </div>
   );
 }

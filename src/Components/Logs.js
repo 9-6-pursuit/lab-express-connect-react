@@ -4,19 +4,18 @@ import axios from "axios";
 
 const API = process.env.REACT_APP_API_URL;
 
-
 function Logs() {
   const [logs, setLogs] = useState([]);
 
   useEffect(() => {
     axios
-      .get(`${API}/bookmarks`)
-      .then((response) => setBookmarks(response.data))
+      .get(`${API}/logs`)
+      .then((response) => setLogs(response.data))
       .catch((e) => console.error("catch", e));
   }, []);
 
   return (
-    <div className="Bookmarks">
+    <div className="Logs">
       <section>
         <table>
           <thead>
@@ -28,7 +27,7 @@ function Logs() {
             </tr>
           </thead>
           <tbody>
-            {bookmarks.map((log, index) => {
+            {logs.map((log, index) => {
               return <Log key={index} bookmark={log} index={index} />;
             })}
           </tbody>
@@ -38,4 +37,4 @@ function Logs() {
   );
 }
 
-export default Bookmarks;
+export default Logs;

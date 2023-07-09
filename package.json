@@ -9,9 +9,8 @@
     "axios": "^0.24.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
     "react-router-dom": "^6.0.2",
-    "web-vitals": "^2.1.4"
+    "react-scripts": "5.0.1"
   },
   "scripts": {
     "start": "react-scripts  start",
@@ -40,6 +39,7 @@
   "devDependencies": {
     "cypress": "^9.7.0",
     "cypress-react-selector": "^3.0.0",
-    "cypress-watch-and-reload": "^1.10.3"
+    "cypress-watch-and-reload": "^1.10.3",
+    "web-vitals": "^3.3.2"
   }
 }

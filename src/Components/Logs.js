@@ -1,9 +1,11 @@
 import { useState, useEffect } from "react";
-import log from "./Bookmark";
+import Log from "./Log";
 import axios from "axios";
 
 const API = process.env.REACT_APP_API_URL;
+console.log("Here is the API url:")
 console.log(API)
+
 
 function Logs() {
   const [logs, setLogs] = useState([]);
@@ -15,20 +17,20 @@ function Logs() {
       .catch((e) => console.error("catch", e));
   }, []);
 
-  return (
-    <div className="logs">
+   return (
+    <div className="Logs">
       <section>
         <table>
           <thead>
             <tr>
-              <th></th>
-              <th>Take me there</th>
+              <th>Mistakes</th>
+              <th>Captain Name</th>
               <th>See this log</th>
             </tr>
           </thead>
           <tbody>
             {logs.map((log, index) => {
-              return <log key={index} log={log} index={index} />;
+              return <Log key={index} log={log} index={index} />;
             })}
           </tbody>
         </table>

@@ -4,46 +4,51 @@ import { useParams, Link, useNavigate } from "react-router-dom";
 const API = process.env.REACT_APP_API_URL;
 
 
-function LogsEditForm() {
+
+
+function LogEditForm() {
   let { index } = useParams();
   const navigate = useNavigate();
-  const [log, setlog] = useState({
+
+  const [log, setLog] = useState({
     captainName: "",
     title: "",
     post: "",
+    daysSinceLastCrisis: "",
     mistakesWereMadeToday: false,
-    daysSinceLastCrisis: [],
   });
-  const updateLog = () => {
-    axios
-      .put(`${API}/logs/${index}`, log)
-      .then((response) => {
-        setlog(response.data);
-        navigate(`/logs/${index}`);
-      })
-      .catch((c) => console.warn("catch", c));
-  };
 
   const handleTextChange = (event) => {
-    setlog({ ...log, [event.target.id]: event.target.value });
+    setLog({ ...log, [event.target.id]: event.target.value });
   };
 
   const handleCheckboxChange = () => {
-    setlog({ ...log, mistakesWereMadeToday: !log.mistakesWereMadeToday });
+    setLog({ ...log, mistakesWereMadeToday: !log.mistakesWereMadeToday });
   };
 
   useEffect(() => {
     axios
       .get(`${API}/logs/${index}`)
       .then((response) => {
-        setlog(response.data);
+        setLog(response.data);
       })
       .catch((e) => console.error(e));
   }, [index]);
 
+  const updateLog = () => {
+    axios
+      .put(`${API}/logs/${index}`, log)
+      .then((response) => {
+        setLog(response.data);
+        navigate(`/logs/${index}`);
+      })
+      .catch((c) => console.warn("catch", c));
+  };
+
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    updateLog();
+    updateLog(log);
   };
   return (
     <div className="Edit">
@@ -51,52 +56,52 @@ function LogsEditForm() {
         <label htmlFor="captainName">Captain's Name:</label>
         <input
           id="captainName"
-          value={log.captainName}
           type="text"
           onChange={handleTextChange}
-          placeholder="Captain's Name"
+          placeholder=""
           required
+          value={log.captainName}
         />
-        <label htmlFor="title">Title:</label>
+        <label htmlFor="title">Title</label>
         <input
           id="title"
           type="text"
-          value={log.title}
-          placeholder="Title"
           onChange={handleTextChange}
+          placeholder=""
+          required
+          value={log.title}
         />
         <label htmlFor="post">Post:</label>
-        <input
+        <textarea
           id="post"
           type="text"
-          name="post"
-          value={log.post}
-          placeholder="What happened today?"
+          placeholder=""
           onChange={handleTextChange}
+          value={log.post}
         />
-        <label htmlFor="mistakesWereMadeToday">Days Since Last Crisis:</label>
+        <label htmlFor="daysSinceLastCrisis">Day Since Last Crisis</label>
+        <input
+          id="daysSinceLastCrisis"
+          type="number"
+          value={log.daysSinceLastCrisis}
+          onChange={handleTextChange}
+          placeholder=""
+        />
+        <label htmlFor="mistakesWereMadeToday">Mistakes were made today :</label>
         <input
           id="mistakesWereMadeToday"
           type="checkbox"
           onChange={handleCheckboxChange}
           checked={log.mistakesWereMadeToday}
         />
-        <label htmlFor="daysSinceLastCrisis">Mistakes Were made today:</label>
-        <input
-          id="mistakesWereMadeToday"
-          type="checkbox"
-          onChange={handleCheckboxChange}
-          checked={log.daysSinceLastCrisis}
-        />
         <br />
-
         <input type="submit" />
       </form>
       <Link to={`/logs/${index}`}>
-        <button>Nevermind!</button>
+        <button>Back</button>
       </Link>
     </div>
   );
 }
 
-export default LogsEditForm;
+export default LogEditForm;

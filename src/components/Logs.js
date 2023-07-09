@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import CaptainsLog from "./CaptainsLog";
-import "../logs.css";
+import "./Logs.css";
 
 function Logs() {
   const [logs, setLogs] = useState([]);

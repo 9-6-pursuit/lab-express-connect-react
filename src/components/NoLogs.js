@@ -1,11 +1,11 @@
 import React from "react";
+import "./NoLogs.css"
 
 function NoLogs() {
   return (
     <div className="noLogs-container">
-      <img
-        src="https://i.imgflip.com/3ts0nb.jpg"
-        alt="No videos"
+      <img 
+        src="../assets/404"
         className="meme"
       />
     </div>

@@ -1,4 +1,4 @@
-import "../logs.css";
+import "./Logs.css";
 
 function CaptainsLog({ log, index }) {
   return (

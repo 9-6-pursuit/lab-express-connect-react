@@ -2,7 +2,7 @@ import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-import "../logs.css";
+import "./Logs.css";
 
 const API = process.env.REACT_APP_API_URL;
 

@@ -1,0 +1,8 @@
+table{
+  background-color: rgb(193, 217, 222);
+  margin: auto;
+  padding: 0 5px 0 5px;
+  width: 90%;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+}

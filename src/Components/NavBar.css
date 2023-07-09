@@ -1,0 +1,16 @@
+button{
+  margin: 2px 10px 2px 10px;
+  padding: 0 5px 0 5px;
+}
+h1{
+  font-size: 3em;
+  text-decoration: 'none';
+  
+}
+
+nav{
+  background-color: rgb(0, 255, 247);
+  border: 2px solid gray;
+  margin: auto;
+  width: 90%;
+}

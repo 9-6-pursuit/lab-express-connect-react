@@ -6,12 +6,12 @@ const API = process.env.REACT_APP_API_URL;
 console.log(API)
 function Logs() {
   const [logs, setLogs] = useState([]);
-
+  console.log(API)
  useEffect(() => {
   axios
     .get(`${API}/logs`)
     .then((response) => setLogs(response.data))
-    .catch((e) => console.error("catch", e));
+    .catch((c) => console.warn("catch", c));
 }, []);
 
 

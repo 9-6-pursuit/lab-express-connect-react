@@ -42,28 +42,33 @@ function LogDetails() {
           <a href={log.url}>{log.title}</a>
         </span>{" "}
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        {log.url}
+        <a href={log.url}>{log.url}</a> {/* New <a> tag here */}
       </h5>
+
       <h6>{log.category}</h6>
       <p>{log.post}</p>
       <p>Days since last crisis: {log.daysSinceLastCrisis}</p> {/* Ensure this property exists in your log object */}
-      <div className="showNavigation">
-  <div>
-    <Link to={`/logs`}> {/* This is the first <a> tag */}
-      <button>Back</button>
-    </Link>
-  </div>
-  <div>
-    <Link to={`/logs/${index}/edit`}> {/* This is the second <a> tag */}
-      <button>Edit</button>
-    </Link>
-  </div>
-  <div>
-    <button onClick={handleDelete}>Delete</button>
-  </div>
-</div>
 
-    </article>
+
+  <div className="showNavigation">
+    <div>
+      <Link to={`/logs`}>
+        <button>Back</button>
+      </Link>
+    </div>
+    <div>
+      <Link to={`/logs/${index}/edit`}>
+        <button>Edit</button>
+      </Link>
+    </div>
+    <div>
+      <Link to="#"> {/* This is a placeholder link */}
+        <button onClick={handleDelete}>Delete</button>
+      </Link>
+    </div>
+  </div>
+
+</article>
   );
 }
 

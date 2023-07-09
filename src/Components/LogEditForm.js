@@ -2,8 +2,6 @@ import { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 const API = process.env.REACT_APP_API_URL;
-
-
 function LogEditForm() {
 const navigate = useNavigate();
   let { index } = useParams();
@@ -15,7 +13,6 @@ const navigate = useNavigate();
     mistakesWereMadeToday: false,  // Changed isFavorite to mistakesWereMadeToday
     // Make sure your API can handle these name changes
   });
-
   const updateLog = () => {
     axios
       .put(`${API}/logs/${index}`, log)
@@ -26,15 +23,20 @@ const navigate = useNavigate();
       .catch((c) => console.warn("catch", c));
   };
 
+
+
   const handleTextChange = (event) => {
-    setLog({ ...log, [event.target.id]: event.target.value });
-  };
+    if(event.target.type === "checkbox"){
+        setLog({ ...log, [event.target.id]: event.target.checked });
+    }
+    else{
+        setLog({ ...log, [event.target.id]: event.target.value });
+    }
+};
 
   const handleCheckboxChange = () => {
     setLog({ ...log, isFavorite: !log.isFavorite });
   };
-
-
   useEffect(() => {
     axios
       .get(`${API}/logs/${index}`)
@@ -43,15 +45,10 @@ const navigate = useNavigate();
       })
       .catch((e) => console.error(e));
   }, [index]);
-
-
-
   const handleSubmit = (event) => {
     event.preventDefault();
     updateLog();
   };
-
-
 
   return (
     
@@ -75,9 +72,6 @@ const navigate = useNavigate();
           placeholder="Title"
           onChange={handleTextChange}
         />
-
-
-
         <label htmlFor="category">Category:</label>
         <input
           id="category"
@@ -102,7 +96,6 @@ const navigate = useNavigate();
           onChange={handleTextChange}
           placeholder="Describe why you loged this site"
         />
-
         <label htmlFor="mistakesWereMadeToday">Mistakes were made today:</label>
         <input
           id="mistakesWereMadeToday"
@@ -110,7 +103,6 @@ const navigate = useNavigate();
           onChange={handleCheckboxChange}
           checked={log.mistakesWereMadeToday}
         />
-
         <label htmlFor="post">Post:</label>
         <textarea
           id="post"
@@ -119,20 +111,18 @@ const navigate = useNavigate();
           onChange={handleTextChange}
           placeholder="Describe the log"
         />
-
-
-
-
         <br />
-
         <input type="submit" />
       </form>
-      <Link to={`/logs/${index}`}>
-        <button>Nevermind!</button>
+      <Link to="/logs">
+        <button>Back</button>
       </Link>
+
     </div>
   );
 }
 
 export default LogEditForm;
+
+
 

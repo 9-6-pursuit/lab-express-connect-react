@@ -19,17 +19,17 @@ export default function Logs() {
             <section>
                 <table>
                     <thead>
-                    <tr>
+                    <tr className="text-center m-10" >
                         <th>Mistakes</th>
                         <th>Take Me There</th>
                         <th>See This Log</th>
                     </tr>
                     </thead>
-                    <td>
+                    <tbody>
                     {logs.map((log, index) => {
                         return <Log key={index} log={log} index={index} />;
                     })}
-                    </td>
+                    </tbody>
                 </table>
             </section>
             

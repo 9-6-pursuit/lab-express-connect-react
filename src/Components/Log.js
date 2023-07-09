@@ -13,6 +13,9 @@ function Log({log, index}) {
         <td>
           <a href={`/logs/${index}`}>{log.captainName}</a>
         </td>
+        <td>
+          {log.title}
+        </td>
       </tr>
     )
   

@@ -1,13 +1,12 @@
 import { useState, useEffect } from "react";
 import Log from "./Log";
 import axios from "axios";
+import "./Logs.css"; 
 
 const API = process.env.REACT_APP_API_URL;
 
 function Logs() {
   const [logs, setLogs] = useState([]);
-
-console.log(`${API}/logs`)
 
   useEffect(() => {
     axios
@@ -18,8 +17,8 @@ console.log(`${API}/logs`)
 
   return (
     <div className="Logs">
-      <section>
-        <table>
+      <section className="logs-section">
+        <table className="logs-table">
           <thead>
             <tr>
               <th></th>

@@ -1,0 +1,15 @@
+.custom-blue {
+  background-color: #03243d;
+}
+
+.btn-long {
+  width: 130px;
+  margin-right: 10px;
+}
+/* WHY WOULDN'T THIS WORK */
+/* .btn {
+    background-color: #03243d; 
+    border-color: #E4D1CF; 
+    color: #E4D1CF; 
+  } */
+  

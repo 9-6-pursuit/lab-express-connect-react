@@ -1,0 +1,31 @@
+.Logs {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
+  
+  .logs-section {
+    background-color: #f4f4f4;
+    padding: 1rem;
+    width: 600px; /* Set the desired width */
+  }
+  
+  .logs-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .logs-table th,
+  .logs-table td {
+    padding: 0.5rem;
+    text-align: left;
+  }
+  
+  .logs-table th {
+    font-weight: bold;
+  }
+  
+  .logs-table tr:nth-child(even) {
+    background-color: #ddd;
+  }
+  

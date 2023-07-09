@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
-import { Link, useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import ListGroup from 'react-bootstrap/ListGroup';
+import Button from 'react-bootstrap/Button';
 
 function LogDetails() {
   const API = process.env.REACT_APP_API_URL;
@@ -32,26 +34,22 @@ function LogDetails() {
       <article>
         <h1>Captain's Log</h1>
         <h1>Show</h1>
-      <h6>{logs.title} - By {logs.captainName}</h6>
+      {/* <h6>{logs.title} - By {logs.captainName}</h6>
       <p>Post: {logs.post}</p>
       <p>Days since last crisis: {logs.daysSinceLastCrisis}</p>
-      <p>Were Mistakes Made Today: {logs.mistakesWereMadeToday ? <span>😔</span> : null}</p>
+      <p>Were Mistakes Made Today: {logs.mistakesWereMadeToday ? <span>😔</span> : null}</p> */}
+        <ListGroup className="my-2">
+          <ListGroup.Item>{logs.title} - By {logs.captainName}</ListGroup.Item>
+          <ListGroup.Item>Post: {logs.post}</ListGroup.Item>
+          <ListGroup.Item>Days since last crisis: {logs.daysSinceLastCrisis}</ListGroup.Item>
+          <ListGroup.Item>Were Mistakes Made Today: {logs.mistakesWereMadeToday ? <span>😔</span> : null}</ListGroup.Item>
+        </ListGroup>
+      
       <div className="showNavigation">
         <div>
-          {" "}
-          <button onClick={handleDelete}>Delete</button>
-        </div>
-        <div>
-          {" "}
-          <Link to={`/logs`}>
-            <button>Back</button>
-          </Link>
-        </div>
-        <div>
-          {" "}
-          <Link to={`/logs/${index}/edit`}>
-            <button>Edit</button>
-          </Link>
+          <Button variant="primary" onClick={handleDelete}>Delete</Button>{' '}
+          <Button variant="secondary" href={`/logs`}>Back</Button>{' '}
+          <Button variant="secondary" href={`/logs/${index}/edit`}>Edit</Button>{' '}
         </div>
 
       </div>

@@ -1,6 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
+import Row from 'react-bootstrap/Row';
+
 const API = process.env.REACT_APP_API_URL;
 
 function LogNewForm() {
@@ -39,29 +44,37 @@ function LogNewForm() {
   };
 
     return (
-      <div className="Edit">
+      <Form onSubmit={handleSubmit}>
         <h1>Captain's Log</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="captainName">Captain's Name:</label>
-        <input
-          id="captainName"
-          value={log.captainName}
-          type="text"
-          onChange={handleTextChange}
-          placeholder="Captain Name"
-          required
-        />
-        <label htmlFor="title">Title:</label>
-        <input
-          id="title"
-          type="text"
-          required
-          value={log.title}
-          placeholder="Title"
-          onChange={handleTextChange}
-        />
-        <label htmlFor="post">Post:</label>
-        <textarea
+      <Row className="mb-3">
+        <Form.Group as={Col}>
+          <Form.Label htmlFor="captainName">Captain's Name</Form.Label>
+          <Form.Control 
+            id="captainName"
+            value={log.captainName}
+            type="text"
+            onChange={handleTextChange}
+            placeholder="Captain Name"
+            required
+          />
+        </Form.Group>
+
+        <Form.Group as={Col}>
+          <Form.Label htmlFor="title">Title:</Form.Label>
+          <Form.Control 
+            id="title"
+            type="text"
+            required
+            value={log.title}
+            placeholder="Title"
+            onChange={handleTextChange}
+          />
+        </Form.Group>
+      </Row>
+
+      <Form.Group className="mb-3">
+        <Form.Label htmlFor="post">Post:</Form.Label>
+        <Form.Control 
           id="post"
           type="text"
           name="post"
@@ -69,29 +82,37 @@ function LogNewForm() {
           placeholder="Post"
           onChange={handleTextChange}
         />
-        <label htmlFor="mistakesWereMadeToday">Mistakes were made today:</label>
-        <input
-          id="mistakesWereMadeToday"
-          type="checkbox"
-          onChange={handleCheckboxChange}
-          checked={log.mistakesWereMadeToday}
-        />
-        <label htmlFor="daysSinceLastCrisis">Days Since Last Crisis:</label>
-        <input
-          id="daysSinceLastCrisis"
-          type="number"
-          name="daysSinceLastCrisis"
-          value={log.daysSinceLastCrisis}
-          placeholder="Days Since Last Crisis"
-          onChange={handleTextChange}
-        />
-        <br />
+      </Form.Group>
+      <Row className="mb-3">
+        <Form.Group as={Col}>
+          <Form.Label htmlFor="daysSinceLastCrisis">Days Since Last Crisis:</Form.Label>
+          <Form.Control
+            id="daysSinceLastCrisis"
+            type="number"
+            name="daysSinceLastCrisis"
+            value={log.daysSinceLastCrisis}
+            placeholder="Days Since Last Crisis"
+            onChange={handleTextChange}
+           />
+        </Form.Group>
 
-        <input type="submit" />
-      </form>
-    </div>
+        <Form.Group as={Col} className="mb-3" >
+          <Form.Check 
+            label="Mistakes Were Made Today?" 
+            id="mistakesWereMadeToday"
+            type="checkbox"
+            onChange={handleCheckboxChange}
+            checked={log.mistakesWereMadeToday}
+          />
+        </Form.Group>
+      </Row>
+      <Button variant="primary" type="submit">
+        Submit
+      </Button>
+    </Form>
     )
   
+
   }
   
   export default LogNewForm;

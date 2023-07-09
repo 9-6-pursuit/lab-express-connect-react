@@ -3,11 +3,12 @@ import Log from "./Log"
 import axios from "axios";
 import { useEffect } from "react";
 const API = process.env.REACT_APP_API_URL
+
 function Logs() {
     const [logs, setLogs] = useState([])
     useEffect(() => {
         axios
-        .get(`${API}//logs`)
+        .get(`${API}/logs`)
         .then((response) => setLogs(response.data))
         .catch((e) => console.error("catch",e))
     },[])

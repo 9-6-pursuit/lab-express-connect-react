@@ -15,7 +15,7 @@ function Logs() {
       //   console.log(response.data);
     };
     result()
-  }, []);
+  }, [URL]);
 
   return (
     <div className="Log">

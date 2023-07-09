@@ -66,6 +66,8 @@ describe("Edit Page", () => {
         cy.get("#captainName").clear().type("Karolin");
         cy.get("#title").clear().type("Silver Rocket");
         cy.get("form > textarea").type("!!!!!!");
+
+
         cy.get("form").submit();
 
         // confirm correct routing after submission

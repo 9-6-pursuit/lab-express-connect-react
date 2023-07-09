@@ -8,10 +8,11 @@ function LogNewForm() {
   const navigate = useNavigate();
 
   const [log, setLog] = useState({
-    captainName: "", // updated the field name
-    title: "", // added the title field
-    entry: "", // added the entry field
-    mistakesWereMadeToday: false, // added the checkbox field
+    captainName: "",
+    title: "",
+    entry: "",
+    mistakesWereMadeToday: false,
+    daysSinceLastCrisis: 0,
   });
 
   const handleTextChange = (event) => {
@@ -51,10 +52,19 @@ function LogNewForm() {
           required
         />
 
-        <label htmlFor="entry">Log Entry:</label>
+        <label htmlFor="post">Post:</label>
         <textarea
-          id="entry"
+          id="post"
           value={log.entry}
+          onChange={handleTextChange}
+          required
+        />
+
+        <label htmlFor="daysSinceLastCrisis">Days Since Last Crisis:</label>
+        <input
+          id="daysSinceLastCrisis"
+          value={log.daysSinceLastCrisis}
+          type="number"
           onChange={handleTextChange}
           required
         />

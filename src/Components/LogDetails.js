@@ -48,25 +48,23 @@ function LogDetails() {
       <h6>{log.category}</h6>
       <p>{log.post}</p>
       <p>Days since last crisis: {log.daysSinceLastCrisis}</p> {/* Ensure this property exists in your log object */}
-
-
-  <div className="showNavigation">
-    <div>
-      <Link to={`/logs`}>
-        <button>Back</button>
-      </Link>
-    </div>
-    <div>
-      <Link to={`/logs/${index}/edit`}>
-        <button>Edit</button>
-      </Link>
-    </div>
-    <div>
-      <Link to="#"> {/* This is a placeholder link */}
-        <button onClick={handleDelete}>Delete</button>
-      </Link>
-    </div>
-  </div>
+      <div className="showNavigation">
+        <div>
+          <Link to={`/logs`}>
+            <button>Back</button>
+          </Link>
+        </div>
+        <div>
+          <Link to={`/logs/${index}/edit`}>
+            <button>Edit</button>
+          </Link>
+        </div>
+        <div>
+          <Link to="#"> {/* This is a placeholder link */}
+            <button onClick={handleDelete}>Delete</button>
+          </Link>
+        </div>
+      </div>
 
 </article>
   );

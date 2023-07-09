@@ -7,6 +7,8 @@ const API = process.env.REACT_APP_API_URL;
 function Logs() {
   const [logs, setLogs] = useState([]);
 
+console.log(`${API}/logs`)
+
   useEffect(() => {
     axios
       .get(`${API}/logs`)
@@ -28,7 +30,7 @@ function Logs() {
           </thead>
           <tbody>
             {logs.map((log, index) => {
-              return <Log key={index} bookmark={log} index={index} />;
+              return <Log key={index} log={log} index={index} />;
             })}
           </tbody>
         </table>

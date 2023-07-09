@@ -8,10 +8,7 @@ function NavBar() {
           <Link to="/">Home</Link>
         </li>
         <li>
-          <Link to="/bookmarks">Logs</Link>
-        </li>
-        <li>
-          <Link to="/bookmarks/new">New Log</Link>
+          <Link to="/logs">Logs</Link>
         </li>
       </ul>
     </nav>

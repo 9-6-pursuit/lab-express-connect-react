@@ -21,10 +21,10 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/bookmarks" element={<Index />} />
-            <Route path="/bookmarks/new" element={<New />} />
-            <Route path="/bookmarks/:index" element={<Show />} />
-            <Route path="/bookmarks/:index/edit" element={<Edit />} />
+            <Route path="/logs" element={<Index />} />
+            <Route path="/logs/new" element={<New />} />
+            <Route path="/logs/:index" element={<Show />} />
+            <Route path="/logs/:index/edit" element={<Edit />} />
             <Route path="*" element={<FourOFour />} />
           </Routes>
         </main>

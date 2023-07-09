@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 
 function Log({ log, index }) {
+  console.log(log); // check console
+
   return (
     <tr className="Log">
       <td>

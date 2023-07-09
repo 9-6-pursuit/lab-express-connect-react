@@ -34,17 +34,11 @@ const handleDelete = () => {
 
   return (
     <article>
-      
-      {/* <h5>
-        <span>
-          <a href={log.url}>{log.captainName}</a>
-        </span>{" "}
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        {log.url}
-      </h5> */}
+      <div className="details">
       <h1>{log.title} - By {log.captainName}</h1>
       <h3>{log.post}</h3>
       <p>Day since last crisis: {log.daysSinceLastCrisis}</p>
+      </div>
       <div className="showNavigation">
         <div>
           {" "}

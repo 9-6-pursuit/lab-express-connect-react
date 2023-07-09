@@ -3,11 +3,32 @@ a {
   color: black
 }
 
+.App {
+  align-content: space-evenly;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 button {
   background: #031639;
   border-color: lightgrey;
   color: #d3d3d3;
   font-style: lightgray;
+}
+
+.details {
+background-color: aliceblue;
+border: 2px solid lightgray;
+border-radius: 25px;
+padding: 30px;
+}
+
+
+h4 {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
 }
 
 input[type],
@@ -24,6 +45,13 @@ input[type="checkbox"] {
 
 input[type="submit"] {
   width: 30%;
+}
+
+.Logs {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
 }
 
 main {
@@ -47,13 +75,44 @@ main {
   color: lightgray;
 }
 
-.New form {
+
+.New {
   margin: auto;
   width: 95%;
+}
+
+.New form {
+  margin: auto;
+  /* width: 95%; */
 }
 
 .showNavigation {
   display: flex;
   justify-content: space-around;
   width: 50%;
+}
+
+
+table {
+  border: 1px solid gray;
+  border-radius: 15px;
+  width: 50%;
+  margin: auto;
+}
+
+tbody td:not(td:first-of-type):hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+tbody tr:nth-child(even) {
+  background: #f4eafd;
+}
+
+tbody tr:nth-child(odd){
+  background: rgb(199, 232, 244);
+}
+
+td {
+  text-align: center;
 }

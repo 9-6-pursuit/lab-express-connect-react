@@ -41,7 +41,7 @@ function LogNewForm() {
   return (
     <div className="new">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="captainName">Captain's Name:</label>
+        <label htmlFor="captainName"><strong>Captain's Name:</strong></label>
         <input
           id="captainName"
           type="text"
@@ -50,7 +50,8 @@ function LogNewForm() {
           required
           value={log.captainName}
         />
-        <label htmlFor="title">Title</label>
+        <br/>
+        <label htmlFor="title"><strong>Title</strong></label>
         <input
           id="title"
           type="text"
@@ -59,15 +60,17 @@ function LogNewForm() {
           required
           value={log.title}
         />
-        <label htmlFor="post">Post:</label>
+         <br/>
+        <label htmlFor="post"><strong>Post:</strong></label>
         <textarea
           id="post"
           type="text"
-          placeholder=""
+          placeholder="What happened today ?"
           onChange={handleTextChange}
           value={log.post}
         />
-        <label htmlFor="daysSinceLastCrisis">Day Since Last Crisis</label>
+         <br/>
+        <label htmlFor="daysSinceLastCrisis"><strong>Day Since Last Crisis</strong></label>
         <input
           id="daysSinceLastCrisis"
           type="number"
@@ -75,7 +78,8 @@ function LogNewForm() {
           onChange={handleTextChange}
           placeholder=""
         />
-        <label htmlFor="mistakesWereMadeToday">Mistakes were made today :</label>
+         <br/>
+        <label htmlFor="mistakesWereMadeToday"><strong>Mistakes were made today:</strong></label>
         <input
           id="mistakesWereMadeToday"
           type="checkbox"

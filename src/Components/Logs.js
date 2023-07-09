@@ -14,8 +14,8 @@ function Logs() {
       setLogs(response.data);
       //   console.log(response.data);
     };
-    result();
-  });
+    result()
+  }, []);
 
   return (
     <div className="Log">

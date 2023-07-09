@@ -25,11 +25,11 @@ export default function Logs() {
                         <th>See This Log</th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <td>
                     {logs.map((log, index) => {
                         return <Log key={index} log={log} index={index} />;
                     })}
-                    </tbody>
+                    </td>
                 </table>
             </section>
             

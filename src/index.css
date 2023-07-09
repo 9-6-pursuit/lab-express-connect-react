@@ -1,5 +1,254 @@
+/* App.css */
+
 body {
+  font-family: Arial, sans-serif;
   margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  background-color: #ffff;
 }
+
+.header-title{
+  text-align: center;
+  font-size: 40px;
+  color: #6c757d;  
+  text-transform: uppercase;
+}
+
+.Home {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: #9bd2da;
+  padding: 100px 10px 100px 10px;
+}
+
+.Home h2 {
+  text-transform: uppercase;
+  font-size: 80px;
+  letter-spacing: 10px;
+  color: #002c5b;  
+}
+
+.Home h3 {
+  margin-top: -70px;
+  font-size: 22px;
+  letter-spacing: 12px;
+  color: #6c757d;
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #002c5b;
+  color: #ffff;
+}
+
+.navbar h1 {
+  margin: 0;
+  font-size: 40px;
+}
+
+.navbar h1 a {
+  text-decoration: none;
+  color: #ffff;
+}
+
+.navbar button {
+  padding: 10px 20px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: none;
+  background-color: #17a2b8;
+  color: #ffff;
+  cursor: pointer;
+}
+
+.navbar button:hover {
+  background-color: #9bd2da;
+  transition: 0.5s;
+}
+
+.navbar button a {
+  text-decoration: none;
+  color: #ffff;
+}
+
+.main {
+  padding: 20px;
+}
+
+.logs {
+  margin: 0 auto;
+  width: 80%;
+}
+
+.logs-card {
+  border: 1px solid #17a2b8;
+}
+
+.logs-card table tbody td a {
+  text-decoration: none;
+  color: #424c54;
+}
+
+.logs-card table tbody td a:hover {
+  color: #17a2b8;
+}
+
+.logs table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.logs table thead {
+  background-color: #17a2b8;
+  color: #ffff;
+}
+
+.logs table th, 
+.logs table td {
+  padding: 20px;
+  text-align: left;
+  border-bottom: 1px solid #c5c7ca;
+}
+
+.logs table tbody tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.show {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.show h3 {
+  color: #17a2b8;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  font-size: 34px;
+}
+
+.show p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.show-card {
+  border: 1px solid #17a2b8;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.show-button {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.show button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #17a2b8;
+  color: #ffff;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.show button:hover {
+  background-color: #002c5b;
+  transition: 0.3s;
+}
+
+.show button:nth-child(2) {
+  background-color: #6c757d;
+}
+
+.show button:nth-child(3) {
+  background-color: #dc3545;
+}
+
+.show button a {
+  color: #ffff;
+  text-decoration: none;
+}
+
+.edit,
+.new {
+  padding: 40px;
+}
+
+.edit form,
+.new form {
+  display: grid;
+  gap: 20px;
+}
+
+.edit form label,
+.new form label {
+  font-weight: bold;
+}
+
+.edit form input[type="text"],
+.new form input[type="text"],
+.edit form textarea,
+.new form textarea,
+.edit form input[type="number"],
+.new form input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #c5c7ca;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-container label {
+  margin-right: 10px;
+}
+
+
+.edit form input[type="submit"],
+.new form input[type="submit"] {
+  width: 20%;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #007BFF;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.button-container input[type="submit"],
+.button-container button {
+  padding: 10px 50px;
+  border-radius: 5px;
+  border: none;
+  background-color: #007BFF;
+  color: #ffffff;
+  cursor: pointer;
+  text-align: center;
+}
+
+.button-container button {
+  background-color: #17a2b8;
+}
+
+.button-container button:hover{
+  background-color: #002c5b;
+  transition: 0.3s;
+}
+

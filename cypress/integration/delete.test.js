@@ -30,6 +30,7 @@ describe("Delete functionality", () => {
       cy.get("a").last().click();
     });
     it("can delete the created log", () => {
+      console.log(cy.get("button"))
       cy.get("button").contains("Delete").click();
       cy.visit(`${URL}/logs`);
       cy.get("td").should("not.contain", "Captain Beefheart");

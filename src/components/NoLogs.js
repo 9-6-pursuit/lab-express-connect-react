@@ -1,13 +1,10 @@
 import React from "react";
 import "./NoLogs.css"
-
+import pic from "../assets/404.PNG"
 function NoLogs() {
   return (
     <div className="noLogs-container">
-      <img 
-        src="../assets/404"
-        className="meme"
-      />
+      <img className="image" src={pic}/>
     </div>
   );
 }

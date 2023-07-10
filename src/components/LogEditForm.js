@@ -50,7 +50,6 @@ export default function LogEditForm() {
   };
     return (
     <div className="editForm">
-        <h1>Captain's Log</h1>
         <form onSubmit={handleSubmit}>
         <label htmlFor="captainName">Captain's Name:</label>
         <input

@@ -42,7 +42,6 @@ export default function LogNewForm() {
   };
     return (
         <div className="newform">
-            <h1>Captain's Log</h1>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="captainName">Captain's Name:</label>
                 <input

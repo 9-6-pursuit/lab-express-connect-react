@@ -3,3 +3,21 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.Logs{
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  padding: auto;
+  margin: auto;
+}
+
+
+.navBar{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  background-color: #03243d;
+  
+}
+

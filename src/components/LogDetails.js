@@ -2,16 +2,14 @@ import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
-const API = process.env.REACT_APP_API_URL ;
+const API = process.env.REACT_APP_API_URL;
 
 export default function LogDetails() {
-    
-
   const [log, setLog] = useState([]);
   let { index } = useParams();
   let navigate = useNavigate();
 
-//SHOW
+  //SHOW
   useEffect(() => {
     axios
       .get(`${API}/logs/${index}`)
@@ -23,7 +21,7 @@ export default function LogDetails() {
       });
   }, [index, navigate]);
 
-//DELETE
+  //DELETE
   const handleDelete = () => {
     axios
       .delete(`${API}/logs/${index}`)
@@ -33,16 +31,16 @@ export default function LogDetails() {
       .catch((e) => console.error(e));
   };
 
-    return (
-      <article>
-        <div className="card">
-            <h1 className="text-center">Captain's Log</h1>
-            <h5>{log.title} - By {log.captainName}</h5>
-            <p>Post: {log.post}</p>
-            <p>Days since last crisis: {log.daysSinceLastCrisis}</p>
-            <p>Were Mistakes Made Today: {log.mistakesWereMadeToday ? <span>💥</span> : null}</p>
-        </div>
-      <div className="showNavigation">
+  return (
+    <article className="detailsCard">
+      <div className="card">
+        <h2>
+          {log.title} - By {log.captainName}
+        </h2>
+        <p>{log.post}</p>
+        <p>Days since last crisis: {log.daysSinceLastCrisis}</p>
+      </div>
+      <div className="navigationButton">
         <div>
           {" "}
           <Link to={`/logs`}>
@@ -57,11 +55,11 @@ export default function LogDetails() {
         </div>
         <div>
           {" "}
-          <button 
-          className="btn btn-danger"
-          onClick={handleDelete}>Delete</button>
+          <button className="btn btn-danger" onClick={handleDelete}>
+            Delete
+          </button>
         </div>
       </div>
     </article>
-    )
-  }
+  );
+}

@@ -1,23 +1,128 @@
+.Home{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.navText{
+  color: white;
+  
+}
+.detailsCard{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin: auto;
+}
+a {
+  text-decoration: none;
+  color: #12125b;
+}
+p .navText{
+  border-radius: 5px;
+  border: 1px solid white;
+  background-color: #03243d;
+  padding: 5px 15px;
+}
+
+button {
+  border-radius: 5px;
+  border: 1px solid white;
+  padding: 5px 20px;
+}
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+} 
+
+.card{
+  padding: 10px;
+  background-color: #eef9fb;
+  box-shadow: 1px 5px #888888;
+  border-radius: 5px;
 }
 
-.Logs{
+
+h3, h4, h5, h6 {
   display: flex;
-  justify-content: center;
-  width: 80%;
-  padding: auto;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+main {
+  width: 90%;
+  margin: auto;
+}
+label {
+  font-weight: bold;
+}
+
+nav {
+  background-color: #03243d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  box-shadow: 2px 2px 10px rgb(184, 182, 182);
+  margin-bottom: 1em;
+}
+
+table {
+  width: 50%;
   margin: auto;
 }
 
-
-.navBar{
-  display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid black;
-  background-color: #03243d;
-  
+td, th {
+  text-align: center;
+  height: 50px;
 }
 
+tr{
+  background-color: #eef9fb;
+
+}
+
+tbody td:not(td:first-of-type):hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+tbody tr:nth-child(even) {
+  background: #f4eafd;
+}
+
+form input {
+  margin: 30px;
+}
+
+input[type],
+textarea {
+  background: #ececf1;
+  color: rgb(0, 0, 0);
+  display: block;
+  width: 50%;
+  margin: auto;
+}
+
+input[type="checkbox"] {
+  margin: 0;
+  width: 2%;
+}
+
+
+input[type="submit"] {
+  width: 30%;
+}
+
+.navigationButton {
+  display: flex;
+  justify-content: center;
+  justify-content: space-around;
+  padding: 20px;
+  width: 80%;
+  margin: auto;
+}
+#mistakesWereMadeToday {
+  display: inline;
+  margin: 30px;
+}

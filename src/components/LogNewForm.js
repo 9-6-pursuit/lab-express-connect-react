@@ -41,7 +41,7 @@ export default function LogNewForm() {
     addLog(log)
   };
     return (
-        <div className=".New">
+        <div className="newform">
             <h1>Captain's Log</h1>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="captainName">Captain's Name:</label>

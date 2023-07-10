@@ -49,7 +49,7 @@ export default function LogEditForm() {
     updateLog();
   };
     return (
-    <div className=".New">
+    <div className="editForm">
         <h1>Captain's Log</h1>
         <form onSubmit={handleSubmit}>
         <label htmlFor="captainName">Captain's Name:</label>

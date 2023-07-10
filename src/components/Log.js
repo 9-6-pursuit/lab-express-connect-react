@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 function Log({ log, index }) {
   return (
+    // <div className="showCard">
     <tr>
       <td>
         {log.mistakesWereMadeToday ? (
@@ -9,19 +10,17 @@ function Log({ log, index }) {
         ):(<span></span>)}
       </td>
       <td>
-        <p>
+        <a href={`/logs/${index}`}>
           {log.captainName}
-        </p>
+        </a>
       </td>
       <td>
         <a href={`/logs/${index}`}>
           {log.title}
         </a>
       </td>
-      {/* <td>
-        <Link to={`/logs/${index}`}>✏️</Link>
-      </td> */}
     </tr>
+    // </div>
   );
 }
 

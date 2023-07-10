@@ -4,11 +4,11 @@ export default function NavBar() {
   return (
     <nav className="navBar">
       <h1>
-        <Link to="/logs">Captain's Logs</Link>
+        <Link className="navText" to="/logs">Captain's Logs</Link>
       </h1>
-      <button>
-        <Link to="/logs/new">New Log</Link>
-      </button>
+      <p>
+        <Link className="navText" to="/logs/new">New Log</Link>
+      </p>
     </nav>
   );
 }

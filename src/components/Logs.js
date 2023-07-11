@@ -6,16 +6,17 @@ import "./Logs.css";
 function Logs() {
   const [logs, setLogs] = useState([]);
   const URL = process.env.REACT_APP_API_URL;
-
+  console.log(`URL: ${URL}`)
   useEffect(() => {
-    const result = async () => {
-      // console.log("we hit useEffect!");
-      const response = await axios.get(`${URL}/logs`);
-      setLogs(response.data);
-      //   console.log(response.data);
-    };
-    result();
-  });
+   
+    axios.get(`${URL}/logs`)
+        .then((response)=>{
+            setLogs(response.data)
+            console.log(response.data)
+        
+        })
+      .catch((e)=> console.error("catch", e)) 
+  }, []);
 
   return (
     <div className="Log">

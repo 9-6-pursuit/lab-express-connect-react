@@ -6,7 +6,7 @@ function CaptainsLog({ log, index }) {
         <tr>
           <td>
             {log.mistakesWereMadeToday ? (
-              <span>⭐️</span>
+              <span>🌱</span>
             ):(<span></span>)}
           </td>
           <td>

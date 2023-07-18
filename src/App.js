@@ -17,7 +17,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/logs" element={<LogsIndex />} />
-            <Route path="/logs/:index" element={<LogDetails />} />
+            <Route exact path="/logs/:index" element={<LogDetails />} />
             <Route path="/logs/new" element={<NewLogForm />} />
             <Route path="/logs/:index/edit" element={<EditLogForm />} />
             <Route path="*" element={<NotFound />} />

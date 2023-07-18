@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams, Link } from 'react-router-dom'
 import axios from 'axios'
-const API = process.env.REACT_APP_API_URL;
+
 
 export default function EditLogForm() {
+    const API = process.env.REACT_APP_API_URL;
     const [log, setLog] = useState({
         captainName: "",
         title: "",
@@ -15,14 +16,14 @@ export default function EditLogForm() {
     const { index } = useParams();
 
     useEffect(() => {
-        axios.get(`${API}/logs/${index}`)
+        axios.get(`${API}/logs/:${index}`)
         .then(response => {
             setLog(response.data)
         })
         .catch(e => {
             console.log(e)
         })
-    }, [index])
+    }, [index, API])
 
     const navigate = useNavigate();
 

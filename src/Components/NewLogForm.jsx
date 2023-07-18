@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import axios from 'axios'
-const API = process.env.REACT_APP_API_URL;
+
 
 export default function NewLogForm() {
+    const API = process.env.REACT_APP_API_URL;
     const [log, setLog] = useState({
         captainName: "",
         title: "",
@@ -27,11 +28,25 @@ export default function NewLogForm() {
         addLog(log)
     }
 
-    function addLog(newLog) {
-        axios.post(`${API}/logs`, log).then(response => {
+    function addLog(log) {
+        axios.post(`${API}/logs`,log).then(response => {
             navigate(`/logs`)
         }).catch(e => console.log(e))
     }
+
+    const deleteLog = () => {
+        axios.delete(`${API}/logs/new`)
+          .then(() => {
+            navigate(`/logs`);
+          },
+            (error) => console.error(error)
+          )
+          .catch((c) => console.warn("catch", c))
+      }
+    
+      const handleDelete = () => {
+        deleteLog();
+      }
   return (
     <div> 
         <h1>New Log</h1>
@@ -82,6 +97,7 @@ export default function NewLogForm() {
         <br />
         <Link to="/logs"><button>Back</button></Link>
         <input type="submit" />
+        <button onClick={handleDelete}>Delete</button>
         
       </form>
     </div>

@@ -1,22 +1,23 @@
 import { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-const API = process.env.REACT_APP_API_URL;
+
 
 export default function LogDetails() {
   const [log, setLog] = useState({});
-  const { index } = useParams();
+  const {index} = useParams();
   const navigate = useNavigate();
+  const API = process.env.REACT_APP_API_URL;
   useEffect(() => {
     axios
       .get(`${API}/logs/${index}`)
       .then((response) => {
         setLog(response.data);
-      })
-      .catch(() => {
+      }).catch((error) => { 
+        console.warn("catch", error) 
         navigate("/not-found");
       });
-  }, [index, navigate]);
+  }, [index, navigate, API]);
 
   const deleteLog = () => {
     axios.delete(`${API}/logs/${index}`)
